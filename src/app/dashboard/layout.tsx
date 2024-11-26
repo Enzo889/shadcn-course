@@ -6,6 +6,27 @@ import Link from "next/link";
 const links = [
   { name: "accordion", href: "accordion" },
   { name: "alert", href: "alert" },
+  { name: "button", href: "button" },
+  { name: "alert dialog", href: "alert-dialog" },
+  { name: "dialog", href: "dialog" },
+  { name: "badge", href: "badge" },
+  { name: "calendar", href: "calendar" },
+  { name: "avatar", href: "avatar" },
+  { name: "card", href: "card" },
+  { name: "carousel", href: "carousel" },
+  { name: "checkbox", href: "checkbox" },
+  { name: "command", href: "command" },
+  { name: "combobox", href: "combobox" },
+  { name: "context menu", href: "context-menu" },
+  { name: "menu bar", href: "menu-bar" },
+  { name: "input OTP", href: "input-otp" },
+  { name: "progress", href: "progress" },
+  { name: "sheet", href: "sheet" },
+  { name: "skeleton", href: "skeleton" },
+  { name: "slider", href: "slider" },
+  { name: "sonner", href: "sonner" },
+  { name: "toast", href: "toast" },
+  { name: "tabs", href: "tabs" },
 ];
 
 export default function DashboardLayout({
