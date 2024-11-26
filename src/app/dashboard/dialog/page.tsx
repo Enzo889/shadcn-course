@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,9 +12,16 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import { Copy } from "lucide-react";
+import { useState } from "react";
 
 export default function DialogPage() {
+  const shadcnInstallationLink: string =
+    "https://ui.shadcn.com/docs/installation";
+  const [copy, setCopy] = useState(shadcnInstallationLink);
+
+  const { toast } = useToast();
   return (
     <div>
       <Dialog>
@@ -34,11 +42,23 @@ export default function DialogPage() {
               </Label>
               <Input
                 id="link"
-                defaultValue="https://ui.shadcn.com/docs/installation"
-                readOnly
+                defaultValue={copy}
+                onChange={(e) => setCopy(e.target.value)}
               />
             </div>
-            <Button type="submit" size="sm" className="px-3">
+            <Button
+              type="submit"
+              size="sm"
+              className="px-3"
+              onClick={() => {
+                navigator.clipboard.writeText(copy);
+                toast({
+                  title: "Copied to clipboard",
+                  description: "Link copied to clipboard",
+                  variant: "default",
+                });
+              }}
+            >
               <span className="sr-only">Copy</span>
               <Copy />
             </Button>
